@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title Frio.mx</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -22,8 +22,8 @@
                 <div class="navbar-collapse collapse"  id="navbarToggleExternalContent">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item active">@Html.ActionLink("Inicio", "Index", "Home",new { }, new { @class= "nav-link" })</li>
-                        <li class="nav-item active">@Html.ActionLink("Acerca de", "About", "Home", new { }, new { @class = "nav-link" })</li>
-                        <li class="nav-item active">@Html.ActionLink("Administradores", "Index", "Administradores", new { }, new { @class = "nav-link" })</li>
+                        @*<li class="nav-item active">@Html.ActionLink("Acerca de", "About", "Home", new { }, new { @class = "nav-link" })</li>
+                        <li class="nav-item active">@Html.ActionLink("Administradores", "Index", "Administradores", new { }, new { @class = "nav-link" })</li>*@
                     </ul>
                     @Html.Partial("_LoginPartial")
                 </div>
@@ -35,7 +35,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year Frio.mx by Nesgar</p>
         </footer>
     </div>
 
