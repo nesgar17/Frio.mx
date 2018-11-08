@@ -1,0 +1,60 @@
+﻿@model Frio.mx.Models.Temporada
+
+@{
+    ViewBag.Title = "Temporada";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Estás seguro de eliminar esta temporada?</h3>
+
+<div>
+    <h4>Temporada</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Torneo.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Torneo.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaTermino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaTermino)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        @Html.ActionLink("Cancelar", "Index", new { }, new { @class = "btn btn-primary" })
+    </div>
+    }
+</div>

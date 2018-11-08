@@ -1,0 +1,51 @@
+﻿@model Frio.mx.Models.Temporada
+
+@{
+    ViewBag.Title = "Temporada";
+}
+
+<h2>Detailles</h2>
+
+<div>
+    <h4>Temporada</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Torneo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Torneo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaTermino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaTermino)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.TemporadaId }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink("Regresar", "Index", new { }, new { @class = "btn btn-success" })
+
+</p>

@@ -1,0 +1,143 @@
+﻿@model Frio.mx.Models.Torneo
+
+@{
+    ViewBag.Title = "Torneo";
+}
+
+<h2>Detalles</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <h4>Torneo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Descripcion)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NumeroEquipos)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NumeroEquipos)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NumeroJornadas)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NumeroJornadas)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Logo)
+            </dt>
+
+            <dd>
+                @if (!string.IsNullOrEmpty(Model.Logo))
+                {
+                    <img src="@Url.Content(Model.Logo)" alt="Image" style="width:200px;height:250px;max-width: 100%; height: auto;" />
+                }
+            </dd>
+
+        </dl>
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.TorneoId }, new { @class = "btn btn-info" })
+
+            @if (Model.Equipos.Count == Model.NumeroEquipos)
+            {
+                @Html.ActionLink("Agregar Equipo", "AgregarEquipo", new { id = Model.TorneoId }, new { @class = "btn btn-primary disabled " })
+
+            }
+            else
+            {
+                @Html.ActionLink("Agregar Equipo", "AgregarEquipo", new { id = Model.TorneoId }, new { @class = "btn btn-primary" })
+
+            }
+
+            @Html.ActionLink("Regresar", "Index", new { }, new { @class = "btn btn-success" })
+        </p>
+    </div>
+    <div class="col-md-8">
+        <hr />
+        @if (Model.Equipos.Count == 0)
+        {
+            <h3> Aún no has registrado equipos </h3>
+
+
+        }
+        else
+
+        {
+            <table class="table" style="width:550px">
+                <tr>
+                    <th style="height:3px;">
+                        @Html.DisplayNameFor(model => model.Equipos.FirstOrDefault().Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Equipos.FirstOrDefault().Escudo)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model.Equipos)
+                {
+                    <tr>
+                        <td style="height:3px;">
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.Escudo))
+                            {
+                                <img src="@Url.Content(item.Escudo)" alt="Image" style="width:25px;height:25px;max-width: 50%; height: auto;" />
+                            }
+
+                        </td>
+                        <td>
+                            @Html.ActionLink("Eliminar", "EliminarEquipo", new { id = item.EquipoId }, new { @class = "btn btn-danger"})
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        }
+
+    </div>
+  
+</div>
+
+<div class="modal fade" id="EliminarEquipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+

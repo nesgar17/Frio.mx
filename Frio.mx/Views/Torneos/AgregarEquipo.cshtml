@@ -1,0 +1,52 @@
+﻿@model Frio.mx.Models.Equipo
+
+@{
+    ViewBag.Title = "Equipos";
+}
+
+<h2>Agrega un Equipo</h2>
+
+
+@using (Html.BeginForm("AgregarEquipo", "Torneos", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Ingresa los siguientes datos</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.TorneoId)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EscudoFile, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <span class="btn btn-primary btn-file">
+                @Html.TextBoxFor(modelo => modelo.EscudoFile, new { type = "file" })
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Agregar" class="btn btn-primary" />
+            @Html.ActionLink("Cancelar", "Details", new { id=Model.TorneoId }, new { @class = "btn btn-danger" })
+
+        </div>
+    </div>
+</div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

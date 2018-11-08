@@ -211,8 +211,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EquiposController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TemporadasController.cs" />
+    <Compile Include="Controllers\TorneosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -226,7 +229,11 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\DataContext.cs" />
+    <Compile Include="Models\Equipo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Jornada.cs" />
+    <Compile Include="Models\Temporada.cs" />
+    <Compile Include="Models\Torneo.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -328,9 +335,27 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Torneos\Create.cshtml" />
+    <Content Include="Views\Torneos\Delete.cshtml" />
+    <Content Include="Views\Torneos\Details.cshtml" />
+    <Content Include="Views\Torneos\Edit.cshtml" />
+    <Content Include="Views\Torneos\Index.cshtml" />
+    <Content Include="Views\Temporadas\Create.cshtml" />
+    <Content Include="Views\Temporadas\Delete.cshtml" />
+    <Content Include="Views\Temporadas\Details.cshtml" />
+    <Content Include="Views\Temporadas\Edit.cshtml" />
+    <Content Include="Views\Temporadas\Index.cshtml" />
+    <Content Include="Views\Equipos\Create.cshtml" />
+    <Content Include="Views\Equipos\Delete.cshtml" />
+    <Content Include="Views\Equipos\Details.cshtml" />
+    <Content Include="Views\Equipos\Edit.cshtml" />
+    <Content Include="Views\Equipos\Index.cshtml" />
+    <Content Include="Views\Torneos\AgregarEquipo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Escudos\" />
+    <Folder Include="Content\Logos\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

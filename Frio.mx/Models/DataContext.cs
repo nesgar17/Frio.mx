@@ -18,5 +18,10 @@
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
 
+        public DbSet<Torneo> Torneos { get; set; }
+
+        public DbSet<Temporada> Temporadas { get; set; }
+
+        public DbSet<Equipo> Equipos { get; set; }
     }
 }
